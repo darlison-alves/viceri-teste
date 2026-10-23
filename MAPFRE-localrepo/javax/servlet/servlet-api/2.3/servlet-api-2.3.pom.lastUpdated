@@ -1,0 +1,9 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Apr 24 14:31:42 BRT 2026
+729ce08a2673ab2fce46073c2be8cee902459b54@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1777051901836
+729ce08a2673ab2fce46073c2be8cee902459b54@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1777051901318
+file\://D\:/MAPFRE-localrepo/.error=
+file\://D\:/MAPFRE-localrepo/.lastUpdated=1777051901854
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.error=Could not transfer artifact javax.servlet\:servlet-api\:pom\:2.3 from/to mapfre-corp (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1)\: status code\: 401, reason phrase\: Unauthorized (401)
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.error=Could not transfer artifact javax.servlet\:servlet-api\:pom\:2.3 from/to releases (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1)\: status code\: 401, reason phrase\: Unauthorized (401)
+https\://repo.maven.apache.org/maven2/.lastUpdated=1777051902004
