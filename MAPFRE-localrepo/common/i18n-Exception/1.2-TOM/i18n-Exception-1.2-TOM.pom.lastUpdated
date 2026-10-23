@@ -1,0 +1,18 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 31 05:07:03 BRT 2026
+file\:///C\:/MAPFRE-localrepo/.lastUpdated=1777397151738
+cb8c808f55e6b9b581d89fcb9af4e38be5e8ec54@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1784818738712
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.error=Could not transfer artifact common\:i18n-Exception\:pom\:1.2-TOM from/to releases (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1)\: Este host n\u00E3o \u00E9 conhecido (pkgs.dev.azure.com)
+5555383941162326b7fdc04e4a7fc8dc1b4e90d2@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1784837258007
+file\://D\:/MAPFRE-localrepo/.error=
+file\://C\:/MAPFRE-localrepo/.error=
+8cdad969df8410cc845f9cc89ba880a399e4bd4b@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1785485220627
+file\://C\:/MAPFRE-localrepo/.lastUpdated=1785485220651
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.error=Could not transfer artifact common\:i18n-Exception\:pom\:1.2-TOM from/to mapfre-corp (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1)\: pkgs.dev.azure.com
+https\://repo.maven.apache.org/maven2/.lastUpdated=1785485223652
+cb8c808f55e6b9b581d89fcb9af4e38be5e8ec54@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1784818738196
+5555383941162326b7fdc04e4a7fc8dc1b4e90d2@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1784837258508
+file\:///C\:/MAPFRE-localrepo/.error=
+https\://repo.maven.apache.org/maven2/.error=
+8cdad969df8410cc845f9cc89ba880a399e4bd4b@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1785485220601
+file\://D\:/MAPFRE-localrepo/.lastUpdated=1782583097610

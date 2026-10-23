@@ -1,0 +1,18 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 31 05:07:04 BRT 2026
+file\:///C\:/MAPFRE-localrepo/.lastUpdated=1777397151773
+cb8c808f55e6b9b581d89fcb9af4e38be5e8ec54@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1784818739728
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.error=Could not transfer artifact common\:common-entities\:pom\:1.1-TOM from/to releases (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1)\: pkgs.dev.azure.com
+5555383941162326b7fdc04e4a7fc8dc1b4e90d2@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1784837259012
+file\://D\:/MAPFRE-localrepo/.error=
+file\://C\:/MAPFRE-localrepo/.error=
+8cdad969df8410cc845f9cc89ba880a399e4bd4b@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1785485223728
+file\://C\:/MAPFRE-localrepo/.lastUpdated=1785485223788
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.error=Could not transfer artifact common\:common-entities\:pom\:1.1-TOM from/to mapfre-corp (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1)\: pkgs.dev.azure.com
+https\://repo.maven.apache.org/maven2/.lastUpdated=1785485224187
+cb8c808f55e6b9b581d89fcb9af4e38be5e8ec54@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1784818739226
+5555383941162326b7fdc04e4a7fc8dc1b4e90d2@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1784837259540
+file\:///C\:/MAPFRE-localrepo/.error=
+https\://repo.maven.apache.org/maven2/.error=
+8cdad969df8410cc845f9cc89ba880a399e4bd4b@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1785485223685
+file\://D\:/MAPFRE-localrepo/.lastUpdated=1782583099529

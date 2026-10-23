@@ -1,0 +1,10 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 24 08:51:59 BRT 2026
+file\://C\:/MAPFRE-localrepo/.error=
+file\://C\:/MAPFRE-localrepo/.lastUpdated=1784893918908
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.error=
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1784893918889
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.error=
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1784893918482
+https\://repo.maven.apache.org/maven2/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1784893919234

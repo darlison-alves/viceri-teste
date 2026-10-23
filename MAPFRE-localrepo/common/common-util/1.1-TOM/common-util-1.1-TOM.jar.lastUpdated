@@ -1,0 +1,14 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Jun 27 15:23:44 BRT 2026
+cb8c808f55e6b9b581d89fcb9af4e38be5e8ec54@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1782583895976
+cb8c808f55e6b9b581d89fcb9af4e38be5e8ec54@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1782583894541
+file\:///C\:/MAPFRE-localrepo/.error=
+file\:///C\:/MAPFRE-localrepo/.lastUpdated=1777397151864
+file\://C\:/MAPFRE-localrepo/.error=
+file\://C\:/MAPFRE-localrepo/.lastUpdated=1782584624460
+file\://D\:/MAPFRE-localrepo/.error=
+file\://D\:/MAPFRE-localrepo/.lastUpdated=1782583896179
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.error=Could not transfer artifact common\:common-util\:jar\:1.1-TOM from/to mapfre-corp (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1)\: status code\: 401, reason phrase\: Unauthorized (401)
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.error=Could not transfer artifact common\:common-util\:jar\:1.1-TOM from/to releases (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1)\: status code\: 401, reason phrase\: Unauthorized (401)
+https\://repo.maven.apache.org/maven2/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1782583897203

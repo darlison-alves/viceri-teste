@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <version>1.0-TOM</version>
+  <description>Central de recursos de configuração.</description>
+  <url>http://mmisvn/arch/common-resources/</url>
+  <parent>
+    <groupId>common</groupId>
+    <artifactId>common</artifactId>
+    <version>1.0-TOM</version>
+    <relativePath>../common/pom.xml</relativePath>
+  </parent>
+  <groupId>common</groupId>
+  <artifactId>common-resources</artifactId>
+  <packaging>jar</packaging>
+  <name>Common Resources</name>
+  <build>
+    <finalName>common-resources</finalName>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+  </build>
+  <dependencies>
+    <!--    <dependency>-->
+    <!--      <groupId>commons-digester</groupId>-->
+    <!--      <artifactId>commons-digester</artifactId>-->
+    <!--      <version>1.8</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>commons-io</groupId>-->
+    <!--      <artifactId>commons-io</artifactId>-->
+    <!--      <version>1.4</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>commons-logging</groupId>-->
+    <!--      <artifactId>commons-logging</artifactId>-->
+    <!--      <version>1.0.4</version>-->
+    <!--    </dependency>-->
+
+    <!--    <dependency>-->
+    <!--      <groupId>javax.xml.bind</groupId>-->
+    <!--      <artifactId>jsr173_api</artifactId>-->
+    <!--      <version>1.0</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>javax.xml.bind</groupId>-->
+    <!--      <artifactId>jaxb-api</artifactId>-->
+    <!--      <version>2.1</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.sun.xml.bind</groupId>-->
+    <!--      <artifactId>jaxb-impl</artifactId>-->
+    <!--      <version>2.0.3</version>-->
+    <!--    </dependency>-->
+    <dependency>
+      <groupId>${pom.parent.groupId}</groupId>
+      <artifactId>common-tests</artifactId>
+      <version>${pom.parent.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <properties>
+    <junit.version>4.4</junit.version>
+  </properties>
+</project>
