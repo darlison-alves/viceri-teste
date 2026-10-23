@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.mapfre.dgtp.gaia-boot</groupId>
+    <artifactId>gaia-boot-starters</artifactId>
+    <version>1.1.0</version>
+  </parent>
+  <groupId>com.mapfre.dgtp.gaia-boot</groupId>
+  <artifactId>gaia-boot-backend-starter-web</artifactId>
+  <version>1.1.0</version>
+  <name>GAIA Boot Backend Web Starter</name>
+  <description>Starter for building web, including RESTful, applications using Spring
+        MVC and features of GAIA for backend applications. Uses Tomcat as the default embedded container</description>
+  <scm>
+    <connection>scm:git:git@bitbucket.org:corparchitecture/gaia-boot.git/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters/gaia-boot-backend-starter-web</connection>
+    <developerConnection>scm:git:git@bitbucket.org:corparchitecture/gaia-boot.git/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters/gaia-boot-backend-starter-web</developerConnection>
+    <url>https://bitbucket.org/corparchitecture/gaia-boot/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters/gaia-boot-backend-starter-web</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>com.mapfre.dgtp.gaia-boot</groupId>
+      <artifactId>gaia-boot-starter</artifactId>
+      <version>1.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mapfre.dgtp.gaia</groupId>
+      <artifactId>gaia-backend</artifactId>
+      <version>3.1.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mapfre.dgtp.gaia</groupId>
+      <artifactId>gaia-soa-error-processor</artifactId>
+      <version>3.1.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>2.3.9.RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>

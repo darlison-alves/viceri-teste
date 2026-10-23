@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.mapfre.dgtp.gaia-boot</groupId>
+    <artifactId>gaia-boot-starters</artifactId>
+    <version>1.1.0</version>
+  </parent>
+  <groupId>com.mapfre.dgtp.gaia-boot</groupId>
+  <artifactId>gaia-boot-starter</artifactId>
+  <version>1.1.0</version>
+  <name>GAIA Boot Starter</name>
+  <description>GAIA Core starter, including auto-configuration support</description>
+  <scm>
+    <connection>scm:git:git@bitbucket.org:corparchitecture/gaia-boot.git/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters/gaia-boot-starter</connection>
+    <developerConnection>scm:git:git@bitbucket.org:corparchitecture/gaia-boot.git/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters/gaia-boot-starter</developerConnection>
+    <url>https://bitbucket.org/corparchitecture/gaia-boot/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters/gaia-boot-starter</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>com.mapfre.dgtp.gaia-boot</groupId>
+      <artifactId>gaia-boot-autoconfigure</artifactId>
+      <version>1.1.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>

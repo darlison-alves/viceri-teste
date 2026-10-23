@@ -1,0 +1,12 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Dec 22 10:29:58 BRT 2025
+file\://D\:/MAPFRE-localrepo/.error=
+5dbbd74a0e77e274ffbeaa2a1aaabdada1698c1f@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1766407668174
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.error=Could not transfer artifact com.mapfre.dgtp.gaia-boot\:gaia-boot-dependencies\:pom\:1.1.0 from/to mapfre-corp (https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1)\: status code\: 401, reason phrase\: Unauthorized (401)
+242a5042d41de55a19134a738293a2a64f79ae95@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1766409595978
+5dbbd74a0e77e274ffbeaa2a1aaabdada1698c1f@default-mapfre-corp-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/mapfre-corp/maven/v1/.lastUpdated=1766407668693
+https\://repo.maven.apache.org/maven2/.lastUpdated=1766404703257
+https\://repo.maven.apache.org/maven2/.error=
+242a5042d41de55a19134a738293a2a64f79ae95@default-releases-https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1766409595424
+https\://pkgs.dev.azure.com/devopsmapfre/devopsmapfre/_packaging/releases/maven/v1/.lastUpdated=1766410198519
+file\://D\:/MAPFRE-localrepo/.lastUpdated=1766404703177

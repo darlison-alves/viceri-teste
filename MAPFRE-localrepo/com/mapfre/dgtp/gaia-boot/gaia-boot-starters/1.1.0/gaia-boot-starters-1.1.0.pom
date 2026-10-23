@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.mapfre.dgtp.gaia-boot</groupId>
+    <artifactId>gaia-boot-parent</artifactId>
+    <version>1.1.0</version>
+    <relativePath>../gaia-boot-parent</relativePath>
+  </parent>
+  <groupId>com.mapfre.dgtp.gaia-boot</groupId>
+  <artifactId>gaia-boot-starters</artifactId>
+  <version>1.1.0</version>
+  <packaging>pom</packaging>
+  <name>GAIA Boot Starters</name>
+  <description>GAIA Boot Starters</description>
+  <scm>
+    <connection>scm:git:git@bitbucket.org:corparchitecture/gaia-boot.git/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters</connection>
+    <developerConnection>scm:git:git@bitbucket.org:corparchitecture/gaia-boot.git/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters</developerConnection>
+    <url>https://bitbucket.org/corparchitecture/gaia-boot/gaia-boot-dependencies/gaia-boot-parent/gaia-boot-starters</url>
+  </scm>
+</project>
