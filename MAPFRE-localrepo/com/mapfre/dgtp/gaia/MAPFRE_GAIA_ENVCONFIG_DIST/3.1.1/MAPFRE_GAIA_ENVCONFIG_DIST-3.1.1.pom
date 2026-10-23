@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.mapfre.dgtp.gaia</groupId>
+    <artifactId>gaia-bom</artifactId>
+    <relativePath>../gaia-bom/pom.xml</relativePath>
+    <version>3.1.1</version>
+  </parent>
+  <artifactId>MAPFRE_GAIA_ENVCONFIG_DIST</artifactId>
+  <packaging>jar</packaging>
+  <name>${project.artifactId}:${project.version}</name>
+  <description>Ficheros Configuración zero de GAIA</description>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+  <profiles>
+    <profile>
+      <id>DEPLOYER</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.mapfre.dgtp.it</groupId>
+            <artifactId>maven-arqos-deploy-lib-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+              <projectType>library</projectType>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>install</phase>
+                <goals>
+                  <goal>script</goal>
+                  <goal>deployLibrary</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>ENV_LOCAL</id>
+      <properties>
+        <gaia.env.wsrr.url>http://esbic.desa.mapfre.net</gaia.env.wsrr.url>
+        <gaia.env.wsrr.user>app-pubwsrr</gaia.env.wsrr.user>
+        <gaia.env.wsrr.pass>Publi01</gaia.env.wsrr.pass>
+        <gaia.env.wsrr.mandatoryUseRegistry>false</gaia.env.wsrr.mandatoryUseRegistry>
+        <gaia.env.wsrr.rootURL>/WSRR/7.0</gaia.env.wsrr.rootURL>
+        <gaia.env.ldap.catalog.url>ldap://wldap.desa.mapfre.net:3268</gaia.env.ldap.catalog.url>
+        <gaia.env.ldap.catalog.user>CN=app-wsad,OU=usuarios,OU=Portal,OU=SSCC,DC=es,DC=mapfre,DC=net</gaia.env.ldap.catalog.user>
+        <gaia.env.ldap.catalog.pass>DESAwsad</gaia.env.ldap.catalog.pass>
+        <gaia.env.ldap.java.naming.referral>follow</gaia.env.ldap.java.naming.referral>
+        <gaia.env.ldap.userSearch.base>dc=es,dc=mapfre,dc=net</gaia.env.ldap.userSearch.base>
+        <gaia.env.ldap.userSearch.filter>(sAMAccountName={0})</gaia.env.ldap.userSearch.filter>
+        <gaia.env.ldap.userSearch.searchSubtree>true</gaia.env.ldap.userSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.base>ou=roles,ou=Aplicaciones,ou=SSCC,dc=es,dc=mapfre,dc=net </gaia.env.ldap.groupSearch.base>
+        <gaia.env.ldap.groupSearch.filter>(member:1.2.840.113556.1.4.1941:={0})</gaia.env.ldap.groupSearch.filter>
+        <gaia.env.ldap.groupSearch.searchSubtree>true</gaia.env.ldap.groupSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.roleAttribute>cn</gaia.env.ldap.groupSearch.roleAttribute>
+        <gaia.env.ldap.groupSearch.ignorePartialResultException>true</gaia.env.ldap.groupSearch.ignorePartialResultException>
+        <gaia.env.ldap.pool.maxActive>8</gaia.env.ldap.pool.maxActive>
+        <gaia.env.ldap.pool.minIdle>0</gaia.env.ldap.pool.minIdle>
+        <gaia.env.ldap.pool.maxIdle>8</gaia.env.ldap.pool.maxIdle>
+        <gaia.env.ldap.pool.maxTotal>-1</gaia.env.ldap.pool.maxTotal>
+        <gaia.env.ldap.pool.maxWait>-1</gaia.env.ldap.pool.maxWait>
+        <gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>30000</gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>
+        <gaia.env.ldap.pool.minEvictableIdleTimeMillis>1800000</gaia.env.ldap.pool.minEvictableIdleTimeMillis>
+        <gaia.env.ldap.pool.testOnBorrow>true</gaia.env.ldap.pool.testOnBorrow>
+        <gaia.env.ldap.pool.testWhileIdle>true</gaia.env.ldap.pool.testWhileIdle>
+        <gaia.env.proxy.hostname>proxy.es.mapfre.net</gaia.env.proxy.hostname>
+        <gaia.env.proxy.port>80</gaia.env.proxy.port>
+        <gaia.env.ldap.clientdirectory.user>CN=app-dircli,OU=APP-Usuarios,OU=Cuentas Especiales,OU=SSCC,DC=dircli,DC=net </gaia.env.ldap.clientdirectory.user>
+        <gaia.env.ldap.clientdirectory.pass>kdH8iSVn</gaia.env.ldap.clientdirectory.pass>
+        <gaia.env.ldap.clientdirectory.url>ldap://wdircli.desa.mapfre.net:389</gaia.env.ldap.clientdirectory.url>
+        <gaia.env.ldap.clientdirectory.userSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.userSearch.base>
+        <gaia.env.ldap.clientdirectory.groupSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.groupSearch.base>
+        <gaia.env.addressnormalization.url>http://wportalinterno.es.mapfre.net/deyde-autoCompletion</gaia.env.addressnormalization.url>
+        <gaia.env.ldap.filterGroup.recursive><![CDATA[(&(cn={0})(objectClass=group)(groupType=-2147483640)(!(name=zz*)))]]></gaia.env.ldap.filterGroup.recursive>
+        <gaia.env.ldap.filterUser.firstLevel><![CDATA[(&(|(objectClass=group)(objectClass=mapfre-general-sadax-role)(objectClass=mapfre-general-sada-role))(!(name=zzz*))(!(name=zzl*))(member={0}))]]></gaia.env.ldap.filterUser.firstLevel>
+        <gaia.env.ldap.read.timeout>50000</gaia.env.ldap.read.timeout>
+        <gaia.env.ldap.cache.provider>ehcache</gaia.env.ldap.cache.provider>
+        <gaia.env.ldap.authentication.cache.enabled>false</gaia.env.ldap.authentication.cache.enabled>
+        <gaia.env.ldap.authentication.cache.timeToLive>900</gaia.env.ldap.authentication.cache.timeToLive>
+        <gaia.env.ldap.authentication.cache.maxElementInMemory>2000</gaia.env.ldap.authentication.cache.maxElementInMemory>
+        <gaia.env.ldap.ad.actives>corporate</gaia.env.ldap.ad.actives>
+        <gaia.env.fileuploader.tempfile.path>/tmp/gaia</gaia.env.fileuploader.tempfile.path>
+        <gaia.env.fileuploader.max.upload.size>20971520</gaia.env.fileuploader.max.upload.size>
+        <gaia.env.fileuploader.max.memory.size>1048576</gaia.env.fileuploader.max.memory.size>
+        <gaia.env.fileuploader.mimeTypes.view.list>image/jpeg,image/gif,image/png,text/html,application/pdf</gaia.env.fileuploader.mimeTypes.view.list>
+        <gaia.env.actuator.endpoints.enabled>true</gaia.env.actuator.endpoints.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.jmx.enabled>false</gaia.env.actuator.jmx.enabled>
+        <gaia.env.security.csrf.urlsIgnored>/login/**,/api/fw/tab/**</gaia.env.security.csrf.urlsIgnored>
+        <gaia.env.security.csrf.paths.no-cache-resource>/api/**</gaia.env.security.csrf.paths.no-cache-resource>
+        <com.ibm.websphere.ltpa.version>1.0</com.ibm.websphere.ltpa.version>
+        <com.ibm.websphere.ltpa.3DESKey>iOsy0bG9Xhn2FvG6B9ShMJ1qhB2ZaMlFaF4+EYUX1mQ\=</com.ibm.websphere.ltpa.3DESKey>
+        <com.ibm.websphere.CreationHost>LES0009001152</com.ibm.websphere.CreationHost>
+        <com.ibm.websphere.ltpa.PrivateKey>S1hwZx14cHTmwV4GsAE2bi66IJy3zncU89yssRTJcl6er53blVU6YxAo3xEUOTyw4mzJjob5X9udYmurhO3fAAig0qCT0I9nZvtqLUA3LXb7k9RS/6OlPJvln1LngmaYO83+pIY2//QDOG1a0tqkqk7imhMGEWjY1dzNg3WVQqhkbFowJa8IqoIF+l20glBG/ZlaNs0wH8l2YxAD5ZmEmakL1OXlxtx4UCvu+cO/kybxa+v9TQt0h1ZACk5qnSEBpic4wAzxhsaH60Wlm5aJBZFBk5XRGdzi0tt184+omPPkg/q8h6CluG3Jm+PgdkiAf92DbMzh8rd+OTMCD75I6tqpU0SGvN6JiWKTyetVHnw\=</com.ibm.websphere.ltpa.PrivateKey>
+        <com.ibm.websphere.ltpa.Realm>wldap.desa.mapfre.net\\:3268</com.ibm.websphere.ltpa.Realm>
+        <com.ibm.websphere.ltpa.PublicKey>AJuZjUhcz6u6keKEkUXnEPBK60ybn6LwrdbPDS5QRvNxxIcKbEvWVbuA2ml67OwaUyebileDljvvCUtMGmuCXi7C+kwx3hsSFgTKPLC5QTbbOIHRW2729ZOm2ZpeKeqxV7B9eobr12tTpV/++Lz/OioSkTqyBhGK4vHJ9yqYBHh3AQAB</com.ibm.websphere.ltpa.PublicKey>
+        <com.ibm.websphere.ltpa.KeyPassword>Mapfre2017</com.ibm.websphere.ltpa.KeyPassword>
+        <gaia.env.ltpa.cookie.name>LtpaToken2</gaia.env.ltpa.cookie.name>
+        <gaia.env.ltpa.generate.token>true</gaia.env.ltpa.generate.token>
+        <gaia.env.ltpa.decode.token>true</gaia.env.ltpa.decode.token>
+        <gaia.env.ltpa.allow-expired.token>true</gaia.env.ltpa.allow-expired.token>
+        <!--CICS VIDA -->
+        <arqos.env.ruta.cabecera>Cabecera</arqos.env.ruta.cabecera>
+        <arqos.env.ruta.esquemas>Esquemas</arqos.env.ruta.esquemas>
+        <arqos.env.Programa_director_CICS>B000V001</arqos.env.Programa_director_CICS>
+        <arqos.env.codificacion>ISO-8859-15</arqos.env.codificacion>
+        <arqos.env.connection.default.cics_caller_identifier>A</arqos.env.connection.default.cics_caller_identifier>
+        <!--#pool: Pool de conexiones CTG -->
+        <arqos.env.pool.enabled>false</arqos.env.pool.enabled>
+        <arqos.env.pool.max_wait_in_millis>2000</arqos.env.pool.max_wait_in_millis>
+        <arqos.env.pool.ctg.max_total>20</arqos.env.pool.ctg.max_total>
+        <arqos.env.pool.ctg.max_idle>-1</arqos.env.pool.ctg.max_idle>
+        <!--# Conexion CTG "online" -->
+
+        <!--<arqos.env.connection.name>conexion_CTG</arqos.env.connection.name> -->
+        <arqos.env.connection.name>online</arqos.env.connection.name>
+        <arqos.env.connection.url>VIDADESAZ1</arqos.env.connection.url>
+        <arqos.env.connection.port>2006</arqos.env.connection.port>
+        <arqos.env.connection.eis>eis/CICSVidaCF</arqos.env.connection.eis>
+        <arqos.env.connection.cics_caller_identifier>A</arqos.env.connection.cics_caller_identifier>
+        <!--# Conexion CTG "batch" -->
+        <arqos.env.connection.batch.name>batch</arqos.env.connection.batch.name>
+        <arqos.env.connection.batch.url>VIDADESAZ1</arqos.env.connection.batch.url>
+        <arqos.env.connection.batch.port>2016</arqos.env.connection.batch.port>
+        <arqos.env.connection.batch.eis>eis/CICSVidaCFBatch</arqos.env.connection.batch.eis>
+        <arqos.env.connection.batch.cics_caller_identifier>X</arqos.env.connection.batch.cics_caller_identifier>
+        <!--# Conexion CTG "24x7" -->
+        <arqos.env.connection.24x7.name>24x7</arqos.env.connection.24x7.name>
+        <arqos.env.connection.24x7.url>VIDADESAZ1</arqos.env.connection.24x7.url>
+        <arqos.env.connection.24x7.port>2026</arqos.env.connection.24x7.port>
+        <arqos.env.connection.24x7.eis>eis/CICSVidaCF24x7</arqos.env.connection.24x7.eis>
+        <arqos.env.connection.24x7.cics_caller_identifier>L</arqos.env.connection.24x7.cics_caller_identifier>
+        <!--# Umbral (en segundos) para avisar y mostrar trazas de las operaciones que lo sobrepasen -->
+        <arqos.env.operationTempThreshold>30</arqos.env.operationTempThreshold>
+      </properties>
+    </profile>
+    <profile>
+      <id>ENV_IC</id>
+      <properties>
+        <gaia.env.wsrr.url>http://esbic.desa.mapfre.net</gaia.env.wsrr.url>
+        <gaia.env.wsrr.user>app-pubwsrr</gaia.env.wsrr.user>
+        <gaia.env.wsrr.pass>Publi01</gaia.env.wsrr.pass>
+        <gaia.env.wsrr.mandatoryUseRegistry>false</gaia.env.wsrr.mandatoryUseRegistry>
+        <gaia.env.wsrr.rootURL>/WSRR/7.0</gaia.env.wsrr.rootURL>
+        <gaia.env.ldap.catalog.url>ldap://wldap.desa.mapfre.net:3268</gaia.env.ldap.catalog.url>
+        <gaia.env.ldap.catalog.user>CN=app-wsad,OU=usuarios,OU=Portal,OU=SSCC,DC=es,DC=mapfre,DC=net</gaia.env.ldap.catalog.user>
+        <gaia.env.ldap.catalog.pass>DESAwsad</gaia.env.ldap.catalog.pass>
+        <gaia.env.ldap.java.naming.referral>follow</gaia.env.ldap.java.naming.referral>
+        <gaia.env.ldap.userSearch.base>dc=es,dc=mapfre,dc=net</gaia.env.ldap.userSearch.base>
+        <gaia.env.ldap.userSearch.filter>(sAMAccountName={0})</gaia.env.ldap.userSearch.filter>
+        <gaia.env.ldap.userSearch.searchSubtree>true</gaia.env.ldap.userSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.base>ou=roles,ou=Aplicaciones,ou=SSCC,dc=es,dc=mapfre,dc=net</gaia.env.ldap.groupSearch.base>
+        <gaia.env.ldap.groupSearch.filter>(member:1.2.840.113556.1.4.1941:={0})</gaia.env.ldap.groupSearch.filter>
+        <gaia.env.ldap.groupSearch.searchSubtree>true</gaia.env.ldap.groupSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.roleAttribute>cn</gaia.env.ldap.groupSearch.roleAttribute>
+        <gaia.env.ldap.groupSearch.ignorePartialResultException>true</gaia.env.ldap.groupSearch.ignorePartialResultException>
+        <gaia.env.ldap.pool.maxActive>8</gaia.env.ldap.pool.maxActive>
+        <gaia.env.ldap.pool.minIdle>0</gaia.env.ldap.pool.minIdle>
+        <gaia.env.ldap.pool.maxIdle>8</gaia.env.ldap.pool.maxIdle>
+        <gaia.env.ldap.pool.maxTotal>-1</gaia.env.ldap.pool.maxTotal>
+        <gaia.env.ldap.pool.maxWait>-1</gaia.env.ldap.pool.maxWait>
+        <gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>30000</gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>
+        <gaia.env.ldap.pool.minEvictableIdleTimeMillis>1800000</gaia.env.ldap.pool.minEvictableIdleTimeMillis>
+        <gaia.env.ldap.pool.testOnBorrow>true</gaia.env.ldap.pool.testOnBorrow>
+        <gaia.env.ldap.pool.testWhileIdle>true</gaia.env.ldap.pool.testWhileIdle>
+        <gaia.env.proxy.hostname>proxy.es.mapfre.net</gaia.env.proxy.hostname>
+        <gaia.env.proxy.port>80</gaia.env.proxy.port>
+        <gaia.env.ldap.clientdirectory.user>CN=app-dircli,OU=APP-Usuarios,OU=Cuentas Especiales,OU=SSCC,DC=dircli,DC=net</gaia.env.ldap.clientdirectory.user>
+        <gaia.env.ldap.clientdirectory.pass>kdH8iSVn</gaia.env.ldap.clientdirectory.pass>
+        <gaia.env.ldap.clientdirectory.url>ldap://wdircli.desa.mapfre.net:389</gaia.env.ldap.clientdirectory.url>
+        <gaia.env.ldap.clientdirectory.userSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.userSearch.base>
+        <gaia.env.ldap.clientdirectory.groupSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.groupSearch.base>
+        <gaia.env.ldap.filterGroup.recursive><![CDATA[(&(cn={0})(objectClass=group)(groupType=-2147483640)(!(name=zz*)))]]></gaia.env.ldap.filterGroup.recursive>
+        <gaia.env.ldap.filterUser.firstLevel><![CDATA[(&(|(objectClass=group)(objectClass=mapfre-general-sadax-role)(objectClass=mapfre-general-sada-role))(!(name=zzz*))(!(name=zzl*))(member={0}))]]></gaia.env.ldap.filterUser.firstLevel>
+        <gaia.env.addressnormalization.url>http://wportalinterno.es.mapfre.net/deyde-autoCompletion </gaia.env.addressnormalization.url>
+        <gaia.env.ldap.read.timeout>50000</gaia.env.ldap.read.timeout>
+        <gaia.env.ldap.cache.provider>ehcache</gaia.env.ldap.cache.provider>
+        <gaia.env.ldap.authentication.cache.enabled>false</gaia.env.ldap.authentication.cache.enabled>
+        <gaia.env.ldap.authentication.cache.timeToLive>900</gaia.env.ldap.authentication.cache.timeToLive>
+        <gaia.env.ldap.authentication.cache.maxElementInMemory>2000</gaia.env.ldap.authentication.cache.maxElementInMemory>
+        <gaia.env.ldap.ad.actives>corporate</gaia.env.ldap.ad.actives>
+        <gaia.env.fileuploader.tempfile.path>/tmp/gaia</gaia.env.fileuploader.tempfile.path>
+        <gaia.env.fileuploader.max.upload.size>20971520</gaia.env.fileuploader.max.upload.size>
+        <gaia.env.fileuploader.max.memory.size>1048576</gaia.env.fileuploader.max.memory.size>
+        <gaia.env.fileuploader.mimeTypes.view.list>image/jpeg,image/gif,image/png,text/html,application/pdf</gaia.env.fileuploader.mimeTypes.view.list>
+        <gaia.env.actuator.endpoints.enabled>true</gaia.env.actuator.endpoints.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials </gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.jmx.enabled>false</gaia.env.actuator.jmx.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials </gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials </gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.security.csrf.urlsIgnored>/login/**,/api/fw/tab/**</gaia.env.security.csrf.urlsIgnored>
+        <gaia.env.security.csrf.paths.no-cache-resource>/api/**</gaia.env.security.csrf.paths.no-cache-resource>
+        <com.ibm.websphere.ltpa.version>1.0</com.ibm.websphere.ltpa.version>
+        <com.ibm.websphere.ltpa.3DESKey>iOsy0bG9Xhn2FvG6B9ShMJ1qhB2ZaMlFaF4+EYUX1mQ\=</com.ibm.websphere.ltpa.3DESKey>
+        <com.ibm.websphere.CreationHost>LES0009001152</com.ibm.websphere.CreationHost>
+        <com.ibm.websphere.ltpa.PrivateKey>S1hwZx14cHTmwV4GsAE2bi66IJy3zncU89yssRTJcl6er53blVU6YxAo3xEUOTyw4mzJjob5X9udYmurhO3fAAig0qCT0I9nZvtqLUA3LXb7k9RS/6OlPJvln1LngmaYO83+pIY2//QDOG1a0tqkqk7imhMGEWjY1dzNg3WVQqhkbFowJa8IqoIF+l20glBG/ZlaNs0wH8l2YxAD5ZmEmakL1OXlxtx4UCvu+cO/kybxa+v9TQt0h1ZACk5qnSEBpic4wAzxhsaH60Wlm5aJBZFBk5XRGdzi0tt184+omPPkg/q8h6CluG3Jm+PgdkiAf92DbMzh8rd+OTMCD75I6tqpU0SGvN6JiWKTyetVHnw\=</com.ibm.websphere.ltpa.PrivateKey>
+        <com.ibm.websphere.ltpa.Realm>wldap.desa.mapfre.net\\:3268</com.ibm.websphere.ltpa.Realm>
+        <com.ibm.websphere.ltpa.PublicKey>AJuZjUhcz6u6keKEkUXnEPBK60ybn6LwrdbPDS5QRvNxxIcKbEvWVbuA2ml67OwaUyebileDljvvCUtMGmuCXi7C+kwx3hsSFgTKPLC5QTbbOIHRW2729ZOm2ZpeKeqxV7B9eobr12tTpV/++Lz/OioSkTqyBhGK4vHJ9yqYBHh3AQAB</com.ibm.websphere.ltpa.PublicKey>
+        <com.ibm.websphere.ltpa.KeyPassword>Mapfre2017</com.ibm.websphere.ltpa.KeyPassword>
+        <gaia.env.ltpa.cookie.name>LtpaToken2</gaia.env.ltpa.cookie.name>
+        <gaia.env.ltpa.generate.token>true</gaia.env.ltpa.generate.token>
+        <gaia.env.ltpa.decode.token>true</gaia.env.ltpa.decode.token>
+        <gaia.env.ltpa.allow-expired.token>true</gaia.env.ltpa.allow-expired.token>
+        <!--CICS VIDA -->
+        <arqos.env.ruta.cabecera>Cabecera</arqos.env.ruta.cabecera>
+        <arqos.env.ruta.esquemas>Esquemas</arqos.env.ruta.esquemas>
+        <arqos.env.Programa_director_CICS>B000V001</arqos.env.Programa_director_CICS>
+        <arqos.env.codificacion>ISO-8859-15</arqos.env.codificacion>
+        <arqos.env.connection.default.cics_caller_identifier>A</arqos.env.connection.default.cics_caller_identifier>
+        <!--#pool: Pool de conexiones CTG -->
+        <arqos.env.pool.enabled>false</arqos.env.pool.enabled>
+        <arqos.env.pool.max_wait_in_millis>2000</arqos.env.pool.max_wait_in_millis>
+        <arqos.env.pool.ctg.max_total>20</arqos.env.pool.ctg.max_total>
+        <arqos.env.pool.ctg.max_idle>-1</arqos.env.pool.ctg.max_idle>
+        <!--# Conexion CTG "online" -->
+
+        <!--<arqos.env.connection.name>conexion_CTG</arqos.env.connection.name> -->
+        <arqos.env.connection.name>online</arqos.env.connection.name>
+        <arqos.env.connection.url>VIDADESAZ1</arqos.env.connection.url>
+        <arqos.env.connection.port>2006</arqos.env.connection.port>
+        <arqos.env.connection.eis>eis/CICSVidaCF</arqos.env.connection.eis>
+        <arqos.env.connection.cics_caller_identifier>A</arqos.env.connection.cics_caller_identifier>
+        <!--# Conexion CTG "batch" -->
+        <arqos.env.connection.batch.name>batch</arqos.env.connection.batch.name>
+        <arqos.env.connection.batch.url>VIDADESAZ1</arqos.env.connection.batch.url>
+        <arqos.env.connection.batch.port>2016</arqos.env.connection.batch.port>
+        <arqos.env.connection.batch.eis>eis/CICSVidaCFBatch</arqos.env.connection.batch.eis>
+        <arqos.env.connection.batch.cics_caller_identifier>X</arqos.env.connection.batch.cics_caller_identifier>
+        <!--# Conexion CTG "24x7" -->
+        <arqos.env.connection.24x7.name>24x7</arqos.env.connection.24x7.name>
+        <arqos.env.connection.24x7.url>VIDADESAZ1</arqos.env.connection.24x7.url>
+        <arqos.env.connection.24x7.port>2026</arqos.env.connection.24x7.port>
+        <arqos.env.connection.24x7.eis>eis/CICSVidaCF24x7</arqos.env.connection.24x7.eis>
+        <arqos.env.connection.24x7.cics_caller_identifier>L</arqos.env.connection.24x7.cics_caller_identifier>
+        <!--# Umbral (en segundos) para avisar y mostrar trazas de las operaciones que lo sobrepasen -->
+        <arqos.env.operationTempThreshold>30</arqos.env.operationTempThreshold>
+      </properties>
+    </profile>
+    <profile>
+      <id>ENV_INT</id>
+      <properties>
+        <gaia.env.wsrr.url>http://soa7.desa.mapfre.net</gaia.env.wsrr.url>
+        <gaia.env.wsrr.user>app-pubwsrr</gaia.env.wsrr.user>
+        <gaia.env.wsrr.pass>Publi01</gaia.env.wsrr.pass>
+        <gaia.env.wsrr.mandatoryUseRegistry>false</gaia.env.wsrr.mandatoryUseRegistry>
+        <gaia.env.wsrr.rootURL>/WSRR/7.0</gaia.env.wsrr.rootURL>
+        <gaia.env.ldap.catalog.url>ldap://wldap.desa.mapfre.net:3268</gaia.env.ldap.catalog.url>
+        <gaia.env.ldap.catalog.user>CN=app-wsad,OU=usuarios,OU=Portal,OU=SSCC,DC=es,DC=mapfre,DC=net</gaia.env.ldap.catalog.user>
+        <gaia.env.ldap.catalog.pass>DESAwsad</gaia.env.ldap.catalog.pass>
+        <gaia.env.ldap.java.naming.referral>follow</gaia.env.ldap.java.naming.referral>
+        <gaia.env.ldap.userSearch.base>dc=es,dc=mapfre,dc=net</gaia.env.ldap.userSearch.base>
+        <gaia.env.ldap.userSearch.filter>(sAMAccountName={0})</gaia.env.ldap.userSearch.filter>
+        <gaia.env.ldap.userSearch.searchSubtree>true</gaia.env.ldap.userSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.base>ou=roles,ou=Aplicaciones,ou=SSCC,dc=es,dc=mapfre,dc=net</gaia.env.ldap.groupSearch.base>
+        <gaia.env.ldap.groupSearch.filter>(member:1.2.840.113556.1.4.1941:={0})</gaia.env.ldap.groupSearch.filter>
+        <gaia.env.ldap.groupSearch.searchSubtree>true</gaia.env.ldap.groupSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.roleAttribute>cn</gaia.env.ldap.groupSearch.roleAttribute>
+        <gaia.env.ldap.groupSearch.ignorePartialResultException>true</gaia.env.ldap.groupSearch.ignorePartialResultException>
+        <gaia.env.ldap.pool.maxActive>8</gaia.env.ldap.pool.maxActive>
+        <gaia.env.ldap.pool.minIdle>0</gaia.env.ldap.pool.minIdle>
+        <gaia.env.ldap.pool.maxIdle>8</gaia.env.ldap.pool.maxIdle>
+        <gaia.env.ldap.pool.maxTotal>-1</gaia.env.ldap.pool.maxTotal>
+        <gaia.env.ldap.pool.maxWait>-1</gaia.env.ldap.pool.maxWait>
+        <gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>30000</gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>
+        <gaia.env.ldap.pool.minEvictableIdleTimeMillis>1800000</gaia.env.ldap.pool.minEvictableIdleTimeMillis>
+        <gaia.env.ldap.pool.testOnBorrow>true</gaia.env.ldap.pool.testOnBorrow>
+        <gaia.env.ldap.pool.testWhileIdle>true</gaia.env.ldap.pool.testWhileIdle>
+        <gaia.env.proxy.hostname>proxy.es.mapfre.net</gaia.env.proxy.hostname>
+        <gaia.env.proxy.port>80</gaia.env.proxy.port>
+        <gaia.env.ldap.clientdirectory.user>CN=app-dircli,OU=APP-Usuarios,OU=Cuentas Especiales,OU=SSCC,DC=dircli,DC=net</gaia.env.ldap.clientdirectory.user>
+        <gaia.env.ldap.clientdirectory.pass>kdH8iSVn</gaia.env.ldap.clientdirectory.pass>
+        <gaia.env.ldap.clientdirectory.url>ldap://wdircli.desa.mapfre.net:389</gaia.env.ldap.clientdirectory.url>
+        <gaia.env.ldap.clientdirectory.userSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.userSearch.base>
+        <gaia.env.ldap.clientdirectory.groupSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.groupSearch.base>
+        <gaia.env.ldap.filterGroup.recursive><![CDATA[(&(cn={0})(objectClass=group)(groupType=-2147483640)(!(name=zz*)))]]></gaia.env.ldap.filterGroup.recursive>
+        <gaia.env.ldap.filterUser.firstLevel><![CDATA[(&(|(objectClass=group)(objectClass=mapfre-general-sadax-role)(objectClass=mapfre-general-sada-role))(!(name=zzz*))(!(name=zzl*))(member={0}))]]></gaia.env.ldap.filterUser.firstLevel>
+        <gaia.env.addressnormalization.url>http://wportalinterno.es.mapfre.net/deyde-autoCompletion</gaia.env.addressnormalization.url>
+        <gaia.env.ldap.read.timeout>50000</gaia.env.ldap.read.timeout>
+        <gaia.env.ldap.cache.provider>ehcache</gaia.env.ldap.cache.provider>
+        <gaia.env.ldap.authentication.cache.enabled>false</gaia.env.ldap.authentication.cache.enabled>
+        <gaia.env.ldap.authentication.cache.timeToLive>900</gaia.env.ldap.authentication.cache.timeToLive>
+        <gaia.env.ldap.authentication.cache.maxElementInMemory>2000</gaia.env.ldap.authentication.cache.maxElementInMemory>
+        <gaia.env.ldap.ad.actives>corporate</gaia.env.ldap.ad.actives>
+        <gaia.env.fileuploader.tempfile.path>/tmp/gaia</gaia.env.fileuploader.tempfile.path>
+        <gaia.env.fileuploader.max.upload.size>20971520</gaia.env.fileuploader.max.upload.size>
+        <gaia.env.fileuploader.max.memory.size>1048576</gaia.env.fileuploader.max.memory.size>
+        <gaia.env.fileuploader.mimeTypes.view.list>image/jpeg,image/gif,image/png,text/html,application/pdf</gaia.env.fileuploader.mimeTypes.view.list>
+        <gaia.env.actuator.endpoints.enabled>true</gaia.env.actuator.endpoints.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.jmx.enabled>false</gaia.env.actuator.jmx.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.security.csrf.urlsIgnored>/login/**,/api/fw/tab/**</gaia.env.security.csrf.urlsIgnored>
+        <gaia.env.security.csrf.paths.no-cache-resource>/api/**</gaia.env.security.csrf.paths.no-cache-resource>
+        <com.ibm.websphere.ltpa.version>1.0</com.ibm.websphere.ltpa.version>
+        <com.ibm.websphere.ltpa.3DESKey>iOsy0bG9Xhn2FvG6B9ShMJ1qhB2ZaMlFaF4+EYUX1mQ\=</com.ibm.websphere.ltpa.3DESKey>
+        <com.ibm.websphere.CreationHost>LES0009001152</com.ibm.websphere.CreationHost>
+        <com.ibm.websphere.ltpa.PrivateKey>S1hwZx14cHTmwV4GsAE2bi66IJy3zncU89yssRTJcl6er53blVU6YxAo3xEUOTyw4mzJjob5X9udYmurhO3fAAig0qCT0I9nZvtqLUA3LXb7k9RS/6OlPJvln1LngmaYO83+pIY2//QDOG1a0tqkqk7imhMGEWjY1dzNg3WVQqhkbFowJa8IqoIF+l20glBG/ZlaNs0wH8l2YxAD5ZmEmakL1OXlxtx4UCvu+cO/kybxa+v9TQt0h1ZACk5qnSEBpic4wAzxhsaH60Wlm5aJBZFBk5XRGdzi0tt184+omPPkg/q8h6CluG3Jm+PgdkiAf92DbMzh8rd+OTMCD75I6tqpU0SGvN6JiWKTyetVHnw\=</com.ibm.websphere.ltpa.PrivateKey>
+        <com.ibm.websphere.ltpa.Realm>wldap.desa.mapfre.net\\:3268</com.ibm.websphere.ltpa.Realm>
+        <com.ibm.websphere.ltpa.PublicKey>AJuZjUhcz6u6keKEkUXnEPBK60ybn6LwrdbPDS5QRvNxxIcKbEvWVbuA2ml67OwaUyebileDljvvCUtMGmuCXi7C+kwx3hsSFgTKPLC5QTbbOIHRW2729ZOm2ZpeKeqxV7B9eobr12tTpV/++Lz/OioSkTqyBhGK4vHJ9yqYBHh3AQAB</com.ibm.websphere.ltpa.PublicKey>
+        <com.ibm.websphere.ltpa.KeyPassword>Mapfre2017</com.ibm.websphere.ltpa.KeyPassword>
+        <gaia.env.ltpa.cookie.name>LtpaToken2</gaia.env.ltpa.cookie.name>
+        <gaia.env.ltpa.generate.token>true</gaia.env.ltpa.generate.token>
+        <gaia.env.ltpa.decode.token>true</gaia.env.ltpa.decode.token>
+        <gaia.env.ltpa.allow-expired.token>true</gaia.env.ltpa.allow-expired.token>
+        <!--CICS VIDA -->
+        <arqos.env.ruta.cabecera>Cabecera</arqos.env.ruta.cabecera>
+        <arqos.env.ruta.esquemas>Esquemas</arqos.env.ruta.esquemas>
+        <arqos.env.Programa_director_CICS>B000V001</arqos.env.Programa_director_CICS>
+        <arqos.env.codificacion>ISO-8859-15</arqos.env.codificacion>
+        <arqos.env.connection.default.cics_caller_identifier>A</arqos.env.connection.default.cics_caller_identifier>
+        <!--#pool: Pool de conexiones CTG -->
+        <arqos.env.pool.enabled>false</arqos.env.pool.enabled>
+        <arqos.env.pool.max_wait_in_millis>2000</arqos.env.pool.max_wait_in_millis>
+        <arqos.env.pool.ctg.max_total>20</arqos.env.pool.ctg.max_total>
+        <arqos.env.pool.ctg.max_idle>-1</arqos.env.pool.ctg.max_idle>
+        <!--# Conexion CTG "online" -->
+
+        <!--<arqos.env.connection.name>conexion_CTG</arqos.env.connection.name> -->
+        <arqos.env.connection.name>online</arqos.env.connection.name>
+        <arqos.env.connection.url>VIDADESAZ1</arqos.env.connection.url>
+        <arqos.env.connection.port>2006</arqos.env.connection.port>
+        <arqos.env.connection.eis>eis/CICSVidaCF</arqos.env.connection.eis>
+        <arqos.env.connection.cics_caller_identifier>A</arqos.env.connection.cics_caller_identifier>
+        <!--# Conexion CTG "batch" -->
+        <arqos.env.connection.batch.name>batch</arqos.env.connection.batch.name>
+        <arqos.env.connection.batch.url>VIDADESAZ1</arqos.env.connection.batch.url>
+        <arqos.env.connection.batch.port>2016</arqos.env.connection.batch.port>
+        <arqos.env.connection.batch.eis>eis/CICSVidaCFBatch</arqos.env.connection.batch.eis>
+        <arqos.env.connection.batch.cics_caller_identifier>X</arqos.env.connection.batch.cics_caller_identifier>
+        <!--# Conexion CTG "24x7" -->
+        <arqos.env.connection.24x7.name>24x7</arqos.env.connection.24x7.name>
+        <arqos.env.connection.24x7.url>VIDADESAZ1</arqos.env.connection.24x7.url>
+        <arqos.env.connection.24x7.port>2026</arqos.env.connection.24x7.port>
+        <arqos.env.connection.24x7.eis>eis/CICSVidaCF24x7</arqos.env.connection.24x7.eis>
+        <arqos.env.connection.24x7.cics_caller_identifier>L</arqos.env.connection.24x7.cics_caller_identifier>
+        <!--# Umbral (en segundos) para avisar y mostrar trazas de las operaciones que lo sobrepasen -->
+        <arqos.env.operationTempThreshold>30</arqos.env.operationTempThreshold>
+      </properties>
+    </profile>
+    <profile>
+      <id>ENV_PRE</id>
+      <properties>
+        <gaia.env.wsrr.url>http://soa7.pre.mapfre.net</gaia.env.wsrr.url>
+        <gaia.env.wsrr.user>app-ramwsrr</gaia.env.wsrr.user>
+        <gaia.env.wsrr.pass>-20 29 126 -33 -111 5 123 70 -112 -49 -68 -101 -102 -112 -121 113</gaia.env.wsrr.pass>
+        <gaia.env.wsrr.mandatoryUseRegistry>false</gaia.env.wsrr.mandatoryUseRegistry>
+        <gaia.env.wsrr.rootURL>/WSRR/7.0</gaia.env.wsrr.rootURL>
+        <gaia.env.ldap.catalog.url>ldap://wldap.pre.mapfre.net:3268</gaia.env.ldap.catalog.url>
+        <gaia.env.ldap.catalog.user>CN=app-sada,OU=adm-usuarios,OU=portal,OU=SSCC,DC=es,DC=mapfre,DC=net</gaia.env.ldap.catalog.user>
+        <gaia.env.ldap.catalog.pass>-65 122 -13 65 -21 76 -128 13 30 -87 96 -106 -97 60 -114 100</gaia.env.ldap.catalog.pass>
+        <gaia.env.ldap.java.naming.referral>follow</gaia.env.ldap.java.naming.referral>
+        <gaia.env.ldap.userSearch.base>dc=es,dc=mapfre,dc=net</gaia.env.ldap.userSearch.base>
+        <gaia.env.ldap.userSearch.filter>(sAMAccountName={0})</gaia.env.ldap.userSearch.filter>
+        <gaia.env.ldap.userSearch.searchSubtree>true</gaia.env.ldap.userSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.base>ou=roles,ou=Aplicaciones,ou=SSCC,dc=es,dc=mapfre,dc=net</gaia.env.ldap.groupSearch.base>
+        <gaia.env.ldap.groupSearch.filter>(member:1.2.840.113556.1.4.1941:={0})</gaia.env.ldap.groupSearch.filter>
+        <gaia.env.ldap.groupSearch.searchSubtree>true</gaia.env.ldap.groupSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.roleAttribute>cn</gaia.env.ldap.groupSearch.roleAttribute>
+        <gaia.env.ldap.groupSearch.ignorePartialResultException>true</gaia.env.ldap.groupSearch.ignorePartialResultException>
+        <gaia.env.ldap.pool.maxActive>8</gaia.env.ldap.pool.maxActive>
+        <gaia.env.ldap.pool.minIdle>0</gaia.env.ldap.pool.minIdle>
+        <gaia.env.ldap.pool.maxIdle>8</gaia.env.ldap.pool.maxIdle>
+        <gaia.env.ldap.pool.maxTotal>-1</gaia.env.ldap.pool.maxTotal>
+        <gaia.env.ldap.pool.maxWait>-1</gaia.env.ldap.pool.maxWait>
+        <gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>30000</gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>
+        <gaia.env.ldap.pool.minEvictableIdleTimeMillis>1800000</gaia.env.ldap.pool.minEvictableIdleTimeMillis>
+        <gaia.env.ldap.pool.testOnBorrow>true</gaia.env.ldap.pool.testOnBorrow>
+        <gaia.env.ldap.pool.testWhileIdle>true</gaia.env.ldap.pool.testWhileIdle>
+        <gaia.env.proxy.hostname>proxy.es.mapfre.net</gaia.env.proxy.hostname>
+        <gaia.env.proxy.port>80</gaia.env.proxy.port>
+        <gaia.env.ldap.clientdirectory.user>CN=app-dircli,OU=APP-Usuarios,OU=Cuentas Especiales,OU=SSCC,DC=dircli,DC=net</gaia.env.ldap.clientdirectory.user>
+        <gaia.env.ldap.clientdirectory.pass>106 54 24 -13 -104 107 91 86 -4 -9 38 -121 69 -98 -97 33</gaia.env.ldap.clientdirectory.pass>
+        <gaia.env.ldap.clientdirectory.url>ldap://wdircli.pre.mapfre.net:389</gaia.env.ldap.clientdirectory.url>
+        <gaia.env.ldap.clientdirectory.userSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.userSearch.base>
+        <gaia.env.ldap.clientdirectory.groupSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.groupSearch.base>
+        <gaia.env.ldap.filterGroup.recursive><![CDATA[(&(cn={0})(objectClass=group)(groupType=-2147483640)(!(name=zz*)))]]></gaia.env.ldap.filterGroup.recursive>
+        <gaia.env.ldap.filterUser.firstLevel><![CDATA[(&(|(objectClass=group)(objectClass=mapfre-general-sadax-role)(objectClass=mapfre-general-sada-role))(!(name=zzz*))(!(name=zzl*))(member={0}))]]></gaia.env.ldap.filterUser.firstLevel>
+        <gaia.env.addressnormalization.url>http://wportalinterno.es.mapfre.net/deyde-autoCompletion</gaia.env.addressnormalization.url>
+        <gaia.env.ldap.read.timeout>50000</gaia.env.ldap.read.timeout>
+        <gaia.env.ldap.cache.provider>ehcache</gaia.env.ldap.cache.provider>
+        <gaia.env.ldap.authentication.cache.enabled>false</gaia.env.ldap.authentication.cache.enabled>
+        <gaia.env.ldap.authentication.cache.timeToLive>900</gaia.env.ldap.authentication.cache.timeToLive>
+        <gaia.env.ldap.authentication.cache.maxElementInMemory>2000</gaia.env.ldap.authentication.cache.maxElementInMemory>
+        <gaia.env.ldap.ad.actives>corporate</gaia.env.ldap.ad.actives>
+        <gaia.env.fileuploader.tempfile.path>/tmp/gaia</gaia.env.fileuploader.tempfile.path>
+        <gaia.env.fileuploader.max.upload.size>20971520</gaia.env.fileuploader.max.upload.size>
+        <gaia.env.fileuploader.max.memory.size>1048576</gaia.env.fileuploader.max.memory.size>
+        <gaia.env.fileuploader.mimeTypes.view.list>image/jpeg,image/gif,image/png,text/html,application/pdf</gaia.env.fileuploader.mimeTypes.view.list>
+        <gaia.env.actuator.endpoints.enabled>true</gaia.env.actuator.endpoints.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.jmx.enabled>false</gaia.env.actuator.jmx.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.security.csrf.urlsIgnored>/login/**,/api/fw/tab/**</gaia.env.security.csrf.urlsIgnored>
+        <gaia.env.security.csrf.paths.no-cache-resource>/api/**</gaia.env.security.csrf.paths.no-cache-resource>
+        <com.ibm.websphere.ltpa.version>1.0</com.ibm.websphere.ltpa.version>
+        <com.ibm.websphere.ltpa.3DESKey>n/a</com.ibm.websphere.ltpa.3DESKey>
+        <com.ibm.websphere.CreationHost>n/a</com.ibm.websphere.CreationHost>
+        <com.ibm.websphere.ltpa.PrivateKey />
+        <com.ibm.websphere.ltpa.Realm>n/a</com.ibm.websphere.ltpa.Realm>
+        <com.ibm.websphere.ltpa.PublicKey>n/a</com.ibm.websphere.ltpa.PublicKey>
+        <com.ibm.websphere.ltpa.KeyPassword>n/a</com.ibm.websphere.ltpa.KeyPassword>
+        <gaia.env.ltpa.generate.token>false</gaia.env.ltpa.generate.token>
+        <gaia.env.ltpa.cookie.name>LtpaToken2</gaia.env.ltpa.cookie.name>
+        <gaia.env.ltpa.decode.token>false</gaia.env.ltpa.decode.token>
+        <gaia.env.ltpa.allow-expired.token>false</gaia.env.ltpa.allow-expired.token>
+        <!--CICS VIDA -->
+        <arqos.env.ruta.cabecera>Cabecera</arqos.env.ruta.cabecera>
+        <arqos.env.ruta.esquemas>Esquemas</arqos.env.ruta.esquemas>
+        <arqos.env.Programa_director_CICS>B000V001</arqos.env.Programa_director_CICS>
+        <arqos.env.codificacion>ISO-8859-15</arqos.env.codificacion>
+        <arqos.env.connection.default.cics_caller_identifier>A</arqos.env.connection.default.cics_caller_identifier>
+        <!--#pool: Pool de conexiones CTG -->
+        <arqos.env.pool.enabled>false</arqos.env.pool.enabled>
+        <arqos.env.pool.max_wait_in_millis>2000</arqos.env.pool.max_wait_in_millis>
+        <arqos.env.pool.ctg.max_total>20</arqos.env.pool.ctg.max_total>
+        <arqos.env.pool.ctg.max_idle>-1</arqos.env.pool.ctg.max_idle>
+        <!--# Conexion CTG "online" -->
+
+        <!--<arqos.env.connection.name>conexion_CTG</arqos.env.connection.name> -->
+        <arqos.env.connection.name>online</arqos.env.connection.name>
+        <arqos.env.connection.url>VIDAPREPZ1</arqos.env.connection.url>
+        <arqos.env.connection.port>2008</arqos.env.connection.port>
+        <arqos.env.connection.eis>eis/CICSVidaCF</arqos.env.connection.eis>
+        <arqos.env.connection.cics_caller_identifier>A</arqos.env.connection.cics_caller_identifier>
+        <!--# Conexion CTG "batch" -->
+        <arqos.env.connection.batch.name>batch</arqos.env.connection.batch.name>
+        <arqos.env.connection.batch.url>VIDAPREPZ1</arqos.env.connection.batch.url>
+        <arqos.env.connection.batch.port>2018</arqos.env.connection.batch.port>
+        <arqos.env.connection.batch.eis>eis/CICSVidaCFBatch</arqos.env.connection.batch.eis>
+        <arqos.env.connection.batch.cics_caller_identifier>X</arqos.env.connection.batch.cics_caller_identifier>
+        <!--# Conexion CTG "24x7" -->
+        <arqos.env.connection.24x7.name>24x7</arqos.env.connection.24x7.name>
+        <arqos.env.connection.24x7.url>VIDAPREPZ1</arqos.env.connection.24x7.url>
+        <arqos.env.connection.24x7.port>2028</arqos.env.connection.24x7.port>
+        <arqos.env.connection.24x7.eis>eis/CICSVidaCF24x7</arqos.env.connection.24x7.eis>
+        <arqos.env.connection.24x7.cics_caller_identifier>L</arqos.env.connection.24x7.cics_caller_identifier>
+        <!--# Umbral (en segundos) para avisar y mostrar trazas de las operaciones que lo sobrepasen -->
+        <arqos.env.operationTempThreshold>30</arqos.env.operationTempThreshold>
+      </properties>
+    </profile>
+    <profile>
+      <id>ENV_PRO</id>
+      <properties>
+        <gaia.env.wsrr.url>http://soa7.es.mapfre.net</gaia.env.wsrr.url>
+        <gaia.env.wsrr.user>app-ramwsrr</gaia.env.wsrr.user>
+        <gaia.env.wsrr.pass>--128 -92 5 -45 104 -9 -107 -13 74 61 3 107 60 5 -76 107</gaia.env.wsrr.pass>
+        <gaia.env.wsrr.mandatoryUseRegistry>false</gaia.env.wsrr.mandatoryUseRegistry>
+        <gaia.env.wsrr.rootURL>/WSRR/7.0</gaia.env.wsrr.rootURL>
+        <gaia.env.ldap.catalog.url>ldap://wldap.mapfre.net:3268</gaia.env.ldap.catalog.url>
+        <gaia.env.ldap.catalog.user>CN=APP-SADA,OU=Portal,OU=Servidores,OU=SSCC,DC=es,DC=mapfre,DC=net</gaia.env.ldap.catalog.user>
+        <gaia.env.ldap.catalog.pass>-14 -77 9 -58 -7 117 -12 4 -52 116 17 90 78 -23 -48 -50</gaia.env.ldap.catalog.pass>
+        <gaia.env.ldap.java.naming.referral>follow</gaia.env.ldap.java.naming.referral>
+        <gaia.env.ldap.userSearch.base>dc=es,dc=mapfre,dc=net</gaia.env.ldap.userSearch.base>
+        <gaia.env.ldap.userSearch.filter>(sAMAccountName={0})</gaia.env.ldap.userSearch.filter>
+        <gaia.env.ldap.userSearch.searchSubtree>true</gaia.env.ldap.userSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.base>ou=roles,ou=Aplicaciones,ou=SSCC,dc=es,dc=mapfre,dc=net</gaia.env.ldap.groupSearch.base>
+        <gaia.env.ldap.groupSearch.filter>(member:1.2.840.113556.1.4.1941:={0})</gaia.env.ldap.groupSearch.filter>
+        <gaia.env.ldap.groupSearch.searchSubtree>true</gaia.env.ldap.groupSearch.searchSubtree>
+        <gaia.env.ldap.groupSearch.roleAttribute>cn</gaia.env.ldap.groupSearch.roleAttribute>
+        <gaia.env.ldap.groupSearch.ignorePartialResultException>true</gaia.env.ldap.groupSearch.ignorePartialResultException>
+        <gaia.env.ldap.pool.maxActive>8</gaia.env.ldap.pool.maxActive>
+        <gaia.env.ldap.pool.minIdle>0</gaia.env.ldap.pool.minIdle>
+        <gaia.env.ldap.pool.maxIdle>8</gaia.env.ldap.pool.maxIdle>
+        <gaia.env.ldap.pool.maxTotal>-1</gaia.env.ldap.pool.maxTotal>
+        <gaia.env.ldap.pool.maxWait>-1</gaia.env.ldap.pool.maxWait>
+        <gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>30000 </gaia.env.ldap.pool.timeBetweenEvictionRunsMillis>
+        <gaia.env.ldap.pool.minEvictableIdleTimeMillis>1800000</gaia.env.ldap.pool.minEvictableIdleTimeMillis>
+        <gaia.env.ldap.pool.testOnBorrow>true</gaia.env.ldap.pool.testOnBorrow>
+        <gaia.env.ldap.pool.testWhileIdle>true</gaia.env.ldap.pool.testWhileIdle>
+        <gaia.env.proxy.hostname>proxy.es.mapfre.net</gaia.env.proxy.hostname>
+        <gaia.env.proxy.port>80</gaia.env.proxy.port>
+        <gaia.env.ldap.clientdirectory.user>CN=app-dircli,OU=APP-Usuarios,OU=Cuentas Especiales,OU=SSCC,DC=dircli,DC=net</gaia.env.ldap.clientdirectory.user>
+        <gaia.env.ldap.clientdirectory.pass>-5 118 -41 19 -93 114 86 -50 12 -113 111 4 100 -19 -66 107</gaia.env.ldap.clientdirectory.pass>
+        <gaia.env.ldap.clientdirectory.url>ldap://wdircli.mapfre.net:389</gaia.env.ldap.clientdirectory.url>
+        <gaia.env.ldap.clientdirectory.userSearch.base>DC=dircli,DC=net</gaia.env.ldap.clientdirectory.userSearch.base>
+        <gaia.env.ldap.clientdirectory.groupSearch.base>DC=dircli,DC=net </gaia.env.ldap.clientdirectory.groupSearch.base>
+        <gaia.env.ldap.filterGroup.recursive><![CDATA[(&(cn={0})(objectClass=group)(groupType=-2147483640)(!(name=zz*)))]]></gaia.env.ldap.filterGroup.recursive>
+        <gaia.env.ldap.filterUser.firstLevel><![CDATA[(&(|(objectClass=group)(objectClass=mapfre-general-sadax-role)(objectClass=mapfre-general-sada-role))(!(name=zzz*))(!(name=zzl*))(member={0}))]]></gaia.env.ldap.filterUser.firstLevel>
+        <gaia.env.addressnormalization.url>http://wportalinterno.es.mapfre.net/deyde-autoCompletion</gaia.env.addressnormalization.url>
+        <gaia.env.ldap.read.timeout>50000</gaia.env.ldap.read.timeout>
+        <gaia.env.ldap.cache.provider>ehcache</gaia.env.ldap.cache.provider>
+        <gaia.env.ldap.authentication.cache.enabled>false</gaia.env.ldap.authentication.cache.enabled>
+        <gaia.env.ldap.authentication.cache.timeToLive>900</gaia.env.ldap.authentication.cache.timeToLive>
+        <gaia.env.ldap.authentication.cache.maxElementInMemory>2000</gaia.env.ldap.authentication.cache.maxElementInMemory>
+        <gaia.env.ldap.ad.actives>corporate</gaia.env.ldap.ad.actives>
+        <gaia.env.fileuploader.tempfile.path>/tmp/gaia</gaia.env.fileuploader.tempfile.path>
+        <gaia.env.fileuploader.max.upload.size>20971520</gaia.env.fileuploader.max.upload.size>
+        <gaia.env.fileuploader.max.memory.size>1048576</gaia.env.fileuploader.max.memory.size>
+        <gaia.env.fileuploader.mimeTypes.view.list>image/jpeg,image/gif,image/png,text/html,application/pdf</gaia.env.fileuploader.mimeTypes.view.list>
+        <gaia.env.actuator.endpoints.enabled>false</gaia.env.actuator.endpoints.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.jmx.enabled>false</gaia.env.actuator.jmx.enabled>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.actuator.context-path>/api/fw/actuator</gaia.env.actuator.context-path>
+        <gaia.env.actuator.keys-to-sanitize>password,pass,secret,key,token,credentials</gaia.env.actuator.keys-to-sanitize>
+        <gaia.env.actuator.security.enabled>false</gaia.env.actuator.security.enabled>
+        <gaia.env.actuator.health.sensitive>true</gaia.env.actuator.health.sensitive>
+        <gaia.env.security.csrf.urlsIgnored>/login/**,/api/fw/tab/**</gaia.env.security.csrf.urlsIgnored>
+        <gaia.env.security.csrf.paths.no-cache-resource>/api/**</gaia.env.security.csrf.paths.no-cache-resource>
+        <com.ibm.websphere.ltpa.version>1.0</com.ibm.websphere.ltpa.version>
+        <com.ibm.websphere.ltpa.3DESKey>n/a</com.ibm.websphere.ltpa.3DESKey>
+        <com.ibm.websphere.CreationHost>n/a</com.ibm.websphere.CreationHost>
+        <com.ibm.websphere.ltpa.PrivateKey>n/a</com.ibm.websphere.ltpa.PrivateKey>
+        <com.ibm.websphere.ltpa.Realm>n/a</com.ibm.websphere.ltpa.Realm>
+        <com.ibm.websphere.ltpa.PublicKey>n/a</com.ibm.websphere.ltpa.PublicKey>
+        <com.ibm.websphere.ltpa.KeyPassword>n/a</com.ibm.websphere.ltpa.KeyPassword>
+        <gaia.env.ltpa.generate.token>false</gaia.env.ltpa.generate.token>
+        <gaia.env.ltpa.cookie.name>LtpaToken2</gaia.env.ltpa.cookie.name>
+        <gaia.env.ltpa.decode.token>false</gaia.env.ltpa.decode.token>
+        <gaia.env.ltpa.allow-expired.token>false</gaia.env.ltpa.allow-expired.token>
+        <!--CICS VIDA -->
+        <arqos.env.ruta.cabecera>Cabecera</arqos.env.ruta.cabecera>
+        <arqos.env.ruta.esquemas>Esquemas</arqos.env.ruta.esquemas>
+        <arqos.env.Programa_director_CICS>B000V001</arqos.env.Programa_director_CICS>
+        <arqos.env.codificacion>ISO-8859-15</arqos.env.codificacion>
+        <arqos.env.connection.default.cics_caller_identifier>A</arqos.env.connection.default.cics_caller_identifier>
+        <!--#pool: Pool de conexiones CTG -->
+        <arqos.env.pool.enabled>false</arqos.env.pool.enabled>
+        <arqos.env.pool.max_wait_in_millis>2000</arqos.env.pool.max_wait_in_millis>
+        <arqos.env.pool.ctg.max_total>20</arqos.env.pool.ctg.max_total>
+        <arqos.env.pool.ctg.max_idle>-1</arqos.env.pool.ctg.max_idle>
+        <!--# Conexion CTG "online" -->
+
+        <!--<arqos.env.connection.name>conexion_CTG</arqos.env.connection.name> -->
+        <arqos.env.connection.name>online</arqos.env.connection.name>
+        <arqos.env.connection.url>VIDAPRODZ1</arqos.env.connection.url>
+        <arqos.env.connection.port>2015</arqos.env.connection.port>
+        <arqos.env.connection.eis>eis/CICSVidaCF</arqos.env.connection.eis>
+        <arqos.env.connection.cics_caller_identifier>A</arqos.env.connection.cics_caller_identifier>
+        <!--# Conexion CTG "batch" -->
+        <arqos.env.connection.batch.name>batch</arqos.env.connection.batch.name>
+        <arqos.env.connection.batch.url>VIDAPRODZ1</arqos.env.connection.batch.url>
+        <arqos.env.connection.batch.port>2025</arqos.env.connection.batch.port>
+        <arqos.env.connection.batch.eis>eis/CICSVidaCFBatch</arqos.env.connection.batch.eis>
+        <arqos.env.connection.batch.cics_caller_identifier>X</arqos.env.connection.batch.cics_caller_identifier>
+        <!--# Conexion CTG "24x7" -->
+        <arqos.env.connection.24x7.name>24x7</arqos.env.connection.24x7.name>
+        <arqos.env.connection.24x7.url>VIDAPRODZ1</arqos.env.connection.24x7.url>
+        <arqos.env.connection.24x7.port>2035</arqos.env.connection.24x7.port>
+        <arqos.env.connection.24x7.eis>eis/CICSVidaCF24x7</arqos.env.connection.24x7.eis>
+        <arqos.env.connection.24x7.cics_caller_identifier>L</arqos.env.connection.24x7.cics_caller_identifier>
+        <!--# Umbral (en segundos) para avisar y mostrar trazas de las operaciones que lo sobrepasen -->
+        <arqos.env.operationTempThreshold>30</arqos.env.operationTempThreshold>
+      </properties>
+    </profile>
+  </profiles>
+</project>
